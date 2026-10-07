@@ -1,15 +1,312 @@
+```html
+<!--
+========================================================
+        GIT / GITHUB QUICK REFERENCE
+========================================================
+
+1. SAVE YOUR FILES
+   Ctrl + S
+
+2. CHECK WHAT HAS CHANGED
+   git status
+
+3. ADD ALL NEW/CHANGED FILES
+   git add .
+
+4. SAVE A SNAPSHOT (COMMIT)
+   git commit -m "Describe what you changed"
+
+5. SEND CHANGES TO GITHUB
+   git push
+
+========================================================
+FIRST TIME ONLY
+========================================================
+
+If you are setting up a new project:
+
+   git init
+   git add .
+   git commit -m "Initial website"
+   git branch -M main
+   git remote add origin YOUR-GITHUB-REPOSITORY-URL
+   git push -u origin main
+
+========================================================
+ADDING PHOTOS / OTHER FILES
+========================================================
+
+Put files inside your website folder:
+
+   Website/
+   ├── index.html
+   ├── style.css
+   ├── images/
+   │   ├── photo1.jpg
+   │   └── photo2.png
+   └── other-files/
+
+Then:
+
+   git add .
+   git commit -m "Add photos"
+   git push
+
+========================================================
+IMPORTANT
+========================================================
+
+Git only uploads files that are inside this project folder.
+
+If you add, change, or delete something, use:
+
+   git status
+
+to see what Git notices.
+
+========================================================
+VS CODE ALTERNATIVE
+========================================================
+
+You can also use the Source Control button in VS Code:
+
+   1. Stage your changes (+)
+   2. Enter a commit message
+   3. Click Commit
+   4. Click Sync Changes / Push
+
+========================================================
+-->
+```
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- Makes the website work properly on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+
+    <title>My Design Portfolio</title>
+
+    <!-- Google Font
+         You can change these later to whatever fonts you like -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Connects this HTML file to your CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-    <h1>Hello World!</h1>
-    <p>This is my class website.</p>
+    <!-- =========================================================
+         HEADER
+         This is the first thing people see.
+         ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <p class="eyebrow">CREATIVE TECHNOLOGY & DESIGN</p>
+
+            <h1>Pierce Franklin</h1>
+
+            <p class="intro">
+                A collection of my work exploring design, technology,
+                creativity, and the process of turning ideas into reality.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+         All of your projects will live inside here.
+         ========================================================= -->
+
+    <main>
+
+
+        <!-- =====================================================
+             PROJECT 1
+             ===================================================== -->
+
+        <section class="project">
+
+            <!-- Project heading -->
+            <div class="project-heading">
+
+                <p class="project-number">01</p>
+
+                <h2>Project Title</h2>
+
+                <p class="project-type">
+                    Design Methods · Fall 2026
+                </p>
+
+            </div>
+
+
+            <!-- Assignment prompt -->
+            <div class="prompt">
+
+                <h3>Assignment Prompt</h3>
+
+                <p>
+                    Place the assignment prompt here.
+
+                    This can be as long as you need it to be.
+                    You can explain what the assignment asked you
+                    to create or investigate.
+                </p>
+
+            </div>
+
+
+            <!-- Your write-up -->
+            <div class="project-writeup">
+
+                <h3>My Approach</h3>
+
+                <p>
+                    This is where I explain what I created and why
+                    I made the decisions that I did.
+                </p>
+
+                <p>
+                    I can add as many paragraphs as I need here.
+                    The website will automatically space them out.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROJECT IMAGES
+                 Put your actual images in your "images" folder.
+                 ================================================= -->
+
+            <div class="project-images">
+
+                <img 
+                    src="images/project1-main.jpg"
+                    alt="Main image of my project"
+                >
+
+                <img 
+                    src="images/project1-detail.jpg"
+                    alt="Detail view of my project"
+                >
+
+            </div>
+
+
+            <!-- Reflection -->
+            <div class="project-writeup">
+
+                <h3>Reflection</h3>
+
+                <p>
+                    Here I can talk about what I learned,
+                    what worked, what didn't work, and what
+                    I would change if I did the project again.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECT 2
+             Copy the entire project section when you want
+             to add another project.
+             ===================================================== -->
+
+        <section class="project">
+
+            <div class="project-heading">
+
+                <p class="project-number">02</p>
+
+                <h2>Another Project</h2>
+
+                <p class="project-type">
+                    Class Name · Fall 2026
+                </p>
+
+            </div>
+
+
+            <div class="prompt">
+
+                <h3>Assignment Prompt</h3>
+
+                <p>
+                    Put the prompt for your second project here.
+                </p>
+
+            </div>
+
+
+            <div class="project-writeup">
+
+                <h3>My Approach</h3>
+
+                <p>
+                    Write about your project here.
+                </p>
+
+            </div>
+
+
+            <div class="project-images">
+
+                <img 
+                    src="images/project2-main.jpg"
+                    alt="Main image of my second project"
+                >
+
+            </div>
+
+
+            <div class="project-writeup">
+
+                <h3>Reflection</h3>
+
+                <p>
+                    Write your reflection here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Pierce Franklin
+        </p>
+
+    </footer>
+
 
 </body>
 </html>

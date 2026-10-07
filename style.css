@@ -1,0 +1,339 @@
+/* ============================================================
+   BASIC RESET
+   Removes some default browser spacing.
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* ============================================================
+   COLORS
+
+   I like keeping colors in variables.
+
+   This means you can change the entire color scheme
+   by changing these few values.
+   ============================================================ */
+
+:root {
+
+    --background: #171b1c;
+    --background-light: #202627;
+
+    --text: #e5e8e5;
+    --text-muted: #aab3b0;
+
+    --accent: #8fb7aa;
+    --accent-dark: #52756c;
+
+    --line: #34403e;
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+body {
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    /* Main body font */
+    font-family: "Inter", sans-serif;
+
+    /* Makes paragraphs easier to read */
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.site-header {
+
+    /*
+    vh = viewport height
+
+    70vh means the header is roughly 70% of the
+    height of the browser window.
+    */
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 10%;
+}
+
+
+/* Keeps the header text from getting too wide */
+
+.header-content {
+    max-width: 850px;
+}
+
+
+/* Small uppercase text above the main heading */
+
+.eyebrow {
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main page title */
+
+h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 8vw, 7rem);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin: 0 0 30px 0;
+}
+
+
+/* Introduction */
+
+.intro {
+
+    color: var(--text-muted);
+
+    font-size: 1.2rem;
+
+    max-width: 650px;
+}
+
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+main {
+
+    width: 80%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   PROJECT
+   ============================================================ */
+
+.project {
+
+    /*
+    Each project gets a large amount of space so that
+    projects feel like individual chapters.
+    */
+
+    padding: 120px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+
+/* ============================================================
+   PROJECT HEADING
+   ============================================================ */
+
+.project-heading {
+
+    margin-bottom: 60px;
+}
+
+
+.project-number {
+
+    color: var(--accent);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 10px;
+}
+
+
+h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    margin: 0 0 15px 0;
+}
+
+
+.project-type {
+
+    color: var(--text-muted);
+
+    margin: 0;
+}
+
+
+/* ============================================================
+   ASSIGNMENT PROMPT
+   ============================================================ */
+
+.prompt {
+
+    background-color: var(--background-light);
+
+    border-left: 3px solid var(--accent);
+
+    padding: 30px 35px;
+
+    margin-bottom: 60px;
+}
+
+
+h3 {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    margin-top: 0;
+
+    color: var(--accent);
+}
+
+
+.prompt p {
+
+    color: var(--text-muted);
+
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   PROJECT WRITE-UP
+   ============================================================ */
+
+.project-writeup {
+
+    max-width: 750px;
+
+    margin-bottom: 60px;
+}
+
+
+.project-writeup p {
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+
+    margin-bottom: 25px;
+}
+
+
+/* ============================================================
+   PROJECT IMAGES
+   ============================================================ */
+
+.project-images {
+
+    /*
+    CSS Grid lets us easily create columns.
+    */
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin: 60px 0;
+}
+
+
+.project-images img {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 4px;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+
+    border-top: 1px solid var(--line);
+
+    padding: 50px 10%;
+
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   PHONE / SMALL SCREEN
+
+   When the screen gets small, the two image columns
+   become one column.
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 60px 8%;
+    }
+
+    main {
+        width: 84%;
+    }
+
+    .project {
+        padding: 80px 0;
+    }
+
+    .project-images {
+        grid-template-columns: 1fr;
+    }
+
+    .prompt {
+        padding: 25px;
+    }
+
+}
