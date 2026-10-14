@@ -368,7 +368,7 @@ border-radius: 12px;
 .model-section p {
 color: #999;
 font-size: 14px;
-t-size: 14px;
+    /* font-size: 14px; */
 }
 
 
