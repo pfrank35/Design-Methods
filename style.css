@@ -389,3 +389,59 @@ font-size: 14px;
     width: 100%;
     height: auto;
 }
+
+/* Assignment brief details */
+
+.brief-phenomena,
+.brief-requirements {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 30px 0 50px;
+}
+
+.brief-phenomena article,
+.brief-requirements article {
+    padding: 24px;
+    background: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.brief-phenomena h4,
+.brief-requirements h4 {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.brief-phenomena p,
+.brief-requirements p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.prompt ul {
+    padding-left: 24px;
+    color: var(--text-muted);
+}
+
+.prompt li {
+    padding-left: 4px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+    .brief-phenomena,
+    .brief-requirements {
+        grid-template-columns: 1fr;
+    }
+}
+.false-affordance-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+}
