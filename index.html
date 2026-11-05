@@ -167,6 +167,9 @@ You can also use the Source Control button in VS Code:
     </header>
 
 
+    <nav class="project-nav" aria-label="Project navigation">
+        <div class="project-nav-inner" id="project-nav"></div>
+    </nav>
 
 
     <!-- =========================================================
@@ -1080,8 +1083,68 @@ My approach was to use the existing forcing function, then add a gated area that
 
 </section>
 
-    </main>  
 
+
+        <!-- =====================================================
+             PROJECT 07: HOT DOG BAR
+             ===================================================== -->
+
+        <section class="project">
+
+            <div class="project-heading">
+                <p class="project-number">07</p>
+                <h2>Hot Dog Bar</h2>
+                <p class="project-type">Design Methods · Fall 2026</p>
+            </div>
+
+            <div class="prompt">
+                <h3>Assignment Prompt</h3>
+                <p>
+                    In pairs, design a floor plan for a spatial experience, specifically:
+                    The Hot Dog Bar at the 2026 Whaaat!? Festival.
+                </p>
+                <ul>
+                    <li>To scale map of the lobby of the ATLAS Institute, with table locations, traffic flow, and notes detailing particular places of interest or focus.</li>
+                    <li>A comprehensive list of condiments, and how they are laid out on the bar.</li>
+                    <li>Each person develops a concept for 1 specialty combination, with a sign that demonstrates how this hot dog should be built.</li>
+                    <li>A concept for a unique voucher, achievement, or playful challenge related to the hot dog bar.</li>
+                    <li>The festival will have two large hot dog rollers that dispense the sausages, each holding 30 hot dogs.</li>
+                    <li>Plan to feed 75 people hot dogs between 12:30 and 1:30, with multi-sensory design considerations throughout.</li>
+                </ul>
+            </div>
+
+            <div class="project-writeup">
+                <h3>Concept Summary</h3>
+                <p>
+                    We designed the Hot Dog Bar as a black-tie cocktail-style experience inspired by the energy of a social mixer, with stand-up tables, elevated styling, and a sushi-like ordering flow. Instead of a typical quick-service line, guests move through a more curated sequence that feels celebratory and intentional. The layout uses two hot dog rollers, a central condiment bar, and carefully placed standing tables to support both circulation and conversation while preserving the playful festival energy of the Whaaat!? event.
+                </p>
+                <p>
+                    The experience is structured like a cocktail party: guests mingle, browse, order, and socialize while standing and circulating through the space. To keep things efficient, the ordering model is inspired by sushi service, where visitors move through a clear sequence, select their hot dog, add toppings, and complete the build at a defined station. The result balances high throughput with an elevated, polished atmosphere that still feels like a game-like social event.
+                </p>
+                <p>
+                    We also developed a specialty concept that classed up the experience further: a little hot dog nacho-style build made with smaller sausages, chili, and cheese, designed to feel playful while fitting the more refined black-tie setting. The condiment bar and signage are arranged to support the same ritualized experience, turning a simple lunch service into a social event.
+                </p>
+            </div>
+
+            <div class="hotdog-grid single-figma-card">
+                <article class="spot-card hotdog-feature-card">
+                    <div class="spot-image figma-one">
+                        <iframe
+                            class="hotdog-embed"
+                            src="https://embed.figma.com/proto/gbRaMirAU8nXXbIkg7GQeE/%F0%9F%8C%ADWeek-9---Hot-Dog-Bar?node-id=1-2&p=f&viewport=261%2C-5%2C0.18&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+                            title="Hot Dog Bar Figma board"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4>Hot Dog Bar Experience</h4>
+                    <p>
+                        This concept brings together the lobby floor plan, traffic flow, condiment organization, specialty dog build, and social challenge components into one coordinated black-tie festival experience. The layout is designed to serve 75 guests efficiently during the 12:30–1:30 lunch window while maintaining an elevated cocktail-party atmosphere. Stand-up tables, a sushi-inspired ordering sequence, and game-like social elements create a polished experience that feels luxurious, organized, and memorable rather than purely utilitarian.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </main>
 
 
 
@@ -1098,6 +1161,29 @@ My approach was to use the existing forcing function, then add a gated area that
     </footer>
 
 
+    <script>
+        const navContainer = document.getElementById('project-nav');
+        const projectSections = [...document.querySelectorAll('section.project')];
+
+        projectSections.forEach((section, index) => {
+            const heading = section.querySelector('h2');
+            if (!heading) return;
+
+            const rawTitle = heading.textContent.trim();
+            const id = rawTitle
+                .toLowerCase()
+                .replace(/&/g, 'and')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '') || `project-${index + 1}`;
+
+            section.id = id;
+
+            const link = document.createElement('a');
+            link.href = `#${id}`;
+            link.textContent = rawTitle;
+            navContainer.appendChild(link);
+        });
+    </script>
 
 
 </body>
